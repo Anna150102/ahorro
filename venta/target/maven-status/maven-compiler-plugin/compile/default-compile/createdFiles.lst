@@ -1,0 +1,11 @@
+conexion\conexion.class
+conexion\PersonaDAO.class
+com\mycompany\venta\ManejoCliente.class
+domain\Usuario.class
+view\DB.class
+domain\Rol.class
+view\DB$1.class
+domain\Cliente.class
+com\mycompany\venta\Venta.class
+conexion\UsuarioDAO.class
+conexion\RolDAO.class
