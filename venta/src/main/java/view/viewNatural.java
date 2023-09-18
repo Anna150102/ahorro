@@ -4,17 +4,27 @@
  */
 package view;
 
+import com.mycompany.venta.ManejoNatural;
+import domain.Empleado;
+import domain.Natural;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author david
  */
 public class viewNatural extends javax.swing.JFrame {
 
+    ManejoNatural mn = new ManejoNatural();
     /**
      * Creates new form Natural
      */
     public viewNatural() {
         initComponents();
+        
+        
+        
     }
 
     /**

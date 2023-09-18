@@ -4,16 +4,22 @@
  */
 package com.mycompany.venta;
 
+import conexion.TrabajoDAO;
+import domain.Trabajo;
+import java.util.List;
+
 /**
  *
  * @author david
  */
 public class ManejoTrabajo {
-    public void Insertar(){
-        
+    TrabajoDAO trabajo = new TrabajoDAO();
+    
+    public void Insertar(String codigoSocio, String tipoEmpresa, String nombreEmpresa, String fechaIngreso, String direccion, int telefono, String funcion, String tipoContrato, String cargo){
+        trabajo.insertar(new Trabajo(codigoSocio, tipoEmpresa, nombreEmpresa, fechaIngreso, direccion, telefono, funcion, tipoContrato, cargo));
     }
     
-    public void Listar(){
-        
+    public List<Trabajo> Listar(){
+        return(trabajo.seleccionar());
     }
 }

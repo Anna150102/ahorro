@@ -9,6 +9,8 @@ package com.mycompany.venta;
  * @author david
  */
 public class ManejoCuenta {
+    
+    
     public void Insertar(){
         
     }

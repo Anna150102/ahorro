@@ -4,6 +4,8 @@
  */
 package view;
 
+import com.mycompany.venta.ManejoNatural;
+
 /**
  *
  * @author david
@@ -97,6 +99,11 @@ public class viewAddNatural extends javax.swing.JFrame {
         jButton1.setText("Atras");
 
         jButton2.setText("Ingresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,6 +237,45 @@ public class viewAddNatural extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String codigoSocio;
+        String apellidoPaterno;
+        String apellidoMaterno;
+        String nombres;
+        String nacionalidad;
+        String profesion;
+        String nivelEducacional;
+        String estadoCivil;
+        String fechaNacimiento;
+        String tipoVivienda;
+        String numeroDependencia;
+        String estado;
+        String sectorEconomico;
+        String actividadPrincipal;
+        String actividadSecundaria;
+        String ocupacion;
+        
+        codigoSocio = "0";
+        apellidoPaterno = jTextField1.getText();
+        apellidoMaterno = jTextField2.getText();
+        nombres = jTextField3.getText();
+        nacionalidad = jTextField4.getText();
+        profesion = jTextField5.getText();
+        nivelEducacional = jTextField6.getText();
+        estadoCivil = jTextField7.getText();
+        fechaNacimiento = jTextField8.getText();
+        tipoVivienda = jTextField10.getText();
+        numeroDependencia = jTextField11.getText();
+        estado = jTextField12.getText();
+        sectorEconomico = jTextField13.getText();
+        actividadPrincipal = jTextField14.getText();
+        actividadSecundaria = jTextField15.getText();
+        ocupacion = jTextField16.getText();
+        
+        ManejoNatural mn = new ManejoNatural();
+        mn.Insertar(codigoSocio, apellidoPaterno, apellidoMaterno, nombres, nacionalidad, profesion, nivelEducacional, estadoCivil, fechaNacimiento, tipoVivienda, numeroDependencia, estado, sectorEconomico, actividadPrincipal, actividadSecundaria, ocupacion);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,16 +4,23 @@
  */
 package com.mycompany.venta;
 
+import conexion.TransaccionDAO;
+import domain.Transaccion;
+import java.util.List;
+
 /**
  *
  * @author david
  */
 public class ManejoTransaccion {
-    public void Insertar(){
+    
+    TransaccionDAO newTransaccion = new TransaccionDAO();
+    public void Insertar(String descripcion){
+        newTransaccion.insertar(new Transaccion(descripcion));
         
     }
     
-    public void Listar(){
-        
+    public List<Transaccion> Listar(){
+        return(newTransaccion.seleccionar());
     }
 }

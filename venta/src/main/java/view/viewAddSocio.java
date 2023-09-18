@@ -4,6 +4,8 @@
  */
 package view;
 
+import com.mycompany.venta.ManejoSocio;
+
 /**
  *
  * @author david
@@ -81,6 +83,11 @@ public class viewAddSocio extends javax.swing.JFrame {
         });
 
         jButton1.setText("Ingresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Atras");
 
@@ -185,6 +192,34 @@ public class viewAddSocio extends javax.swing.JFrame {
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String tipoId; 
+        String identificacion; 
+        String nombreUsual;
+        String relacion; 
+        String grupoEconomico; 
+        String exoneradoImpuesto; 
+        String relacionAseguradora; 
+        String sucursalOrigen; 
+        String oficinaOrigen; 
+        String fechaIngreso; 
+        String ejecutivo;
+        
+        tipoId = jTextField1.getText();
+        identificacion = jTextField2.getText();
+        nombreUsual = jTextField3.getText();
+        relacion = jTextField4.getText();
+        grupoEconomico = jTextField5.getText();
+        exoneradoImpuesto = jTextField6.getText();
+        relacionAseguradora = jTextField7.getText();
+        sucursalOrigen = jTextField8.getText();
+        oficinaOrigen = jTextField9.getText();
+        fechaIngreso = jTextField11.getText();
+        ejecutivo = jTextField11.getText();
+        ManejoSocio socio = new ManejoSocio();
+        socio.Insertar(tipoId, identificacion, nombreUsual, relacion, grupoEconomico, exoneradoImpuesto, relacionAseguradora, sucursalOrigen, oficinaOrigen, fechaIngreso, ejecutivo);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

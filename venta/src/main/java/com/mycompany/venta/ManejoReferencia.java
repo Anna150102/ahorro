@@ -4,16 +4,23 @@
  */
 package com.mycompany.venta;
 
+import conexion.ReferenciaDAO;
+import domain.Referencia;
+import java.util.List;
+
 /**
  *
  * @author david
  */
 public class ManejoReferencia {
-    public void Insertar(){
-        
+    
+    ReferenciaDAO newReferencia = new ReferenciaDAO();
+    
+    public void Insertar(String codigoSocio, String tipoRefencia, String nombre, String nombreTrabajo, String mail, int telefono, String observacion){
+        newReferencia.insertar(new Referencia(codigoSocio, tipoRefencia,  nombre,  nombreTrabajo,  mail,telefono,  observacion));
     }
     
-    public void Listar(){
-        
+    public List<Referencia> Listar(){
+        return(newReferencia.seleccionar());
     }
 }
