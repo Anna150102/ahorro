@@ -4,17 +4,62 @@
  */
 package view;
 
+import com.mycompany.venta.ManejoEmpleado;
+import domain.Empleado;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 33010
  */
 public class viewEmpleado extends javax.swing.JFrame {
 
+    ManejoEmpleado newEmpleado = new ManejoEmpleado();
     /**
      * Creates new form viewEmpleado
      */
     public viewEmpleado() {
         initComponents();
+        String[] columnNames = {
+            "id_empleado",
+            "nombre",
+            "identificacion",
+            "Sexo",
+            "Estado Civil",
+            "Profesion",
+            "Nacionalidad",
+            "Fecha Nacimiento",
+            "Fecha Ingreso",
+            "Fecha Salida",
+            "Mail Interno",
+            "Mail Personal"
+        };
+        
+        List<Empleado> lista = newEmpleado.Listar();
+         
+        DefaultTableModel dtm = new DefaultTableModel();
+        
+        dtm.setColumnIdentifiers(columnNames);
+        
+        Object[] fila = new Object[dtm.getColumnCount()];
+        
+        for(int i = 0; i<lista.size(); i++){
+            fila[0] = lista.get(i).getId_Empleado();
+            fila[1] = lista.get(i).getNombre();
+            fila[2] = lista.get(i).getIdentificacion();
+            fila[3] = lista.get(i).getSexo();
+            fila[4] = lista.get(i).getEstadoCivil();
+            fila[5] = lista.get(i).getProfesion();
+            fila[6] = lista.get(i).getNacionalidad();
+            fila[7] = lista.get(i).getFechaIngreso();
+            fila[8] = lista.get(i).getFechaSalida();
+            fila[9] = lista.get(i).getMailInterno();
+            fila[10] = lista.get(i).getMailPersonal();
+            dtm.addRow(fila);
+        }
+        
+        jTable1.setModel(dtm);
     }
 
     /**
@@ -30,6 +75,7 @@ public class viewEmpleado extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +97,20 @@ public class viewEmpleado extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Ingresar un nuevo Empleado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(255, 102, 102));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Atras");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,6 +122,8 @@ public class viewEmpleado extends javax.swing.JFrame {
                 .addContainerGap(455, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
@@ -77,12 +139,26 @@ public class viewEmpleado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        viewAddEmpleado addEmpleado = new viewAddEmpleado();
+        addEmpleado.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        DB vista = new DB();
+        vista.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,6 +197,7 @@ public class viewEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

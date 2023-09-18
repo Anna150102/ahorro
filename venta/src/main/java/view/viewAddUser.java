@@ -4,12 +4,15 @@
  */
 package view;
 
+import com.mycompany.venta.ManejoUsuario;
+
 /**
  *
  * @author Anna
  */
 public class viewAddUser extends javax.swing.JFrame {
 
+    ManejoUsuario newUsuario = new ManejoUsuario();
     /**
      * Creates new form viewAddUser
      */
@@ -38,6 +41,7 @@ public class viewAddUser extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         btnNewUser = new javax.swing.JButton();
+        btnNewUser1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +60,20 @@ public class viewAddUser extends javax.swing.JFrame {
         btnNewUser.setBackground(new java.awt.Color(255, 102, 102));
         btnNewUser.setForeground(new java.awt.Color(255, 255, 255));
         btnNewUser.setText("Guardar");
+        btnNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewUserActionPerformed(evt);
+            }
+        });
+
+        btnNewUser1.setBackground(new java.awt.Color(255, 102, 102));
+        btnNewUser1.setForeground(new java.awt.Color(255, 255, 255));
+        btnNewUser1.setText("Atras");
+        btnNewUser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewUser1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,6 +104,8 @@ public class viewAddUser extends javax.swing.JFrame {
                 .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnNewUser1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewUser)
                 .addGap(19, 19, 19))
         );
@@ -115,12 +135,36 @@ public class viewAddUser extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(btnNewUser)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewUser)
+                    .addComponent(btnNewUser1))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewUserActionPerformed
+        String user;
+        String clave;
+        String codigo_empl;
+        String fechainicio;
+        String fechafin;
+        
+        user = jTextField1.getText();
+        clave = jTextField2.getText();
+        codigo_empl = jTextField3.getText();
+        fechainicio = jTextField4.getText();
+        fechafin = jTextField5.getText();
+        
+        newUsuario.Insertar(user, clave, codigo_empl, fechainicio, fechafin);
+    }//GEN-LAST:event_btnNewUserActionPerformed
+
+    private void btnNewUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewUser1ActionPerformed
+        viewUser vista = new viewUser();
+        vista.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnNewUser1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +203,7 @@ public class viewAddUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNewUser;
+    private javax.swing.JButton btnNewUser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
