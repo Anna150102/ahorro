@@ -47,6 +47,7 @@ public class EmpleadoDAO {
 
                 empleado = new Empleado(id_Empleado, nombre, identificacion, sexo, estadoCivil, profesion, nacionalidad, fechaNacimiento, fechaIngreso, fechaSalida, mailInterno, mailPersonal);
                 empleados.add(empleado);
+
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

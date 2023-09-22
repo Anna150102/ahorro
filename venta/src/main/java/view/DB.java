@@ -40,29 +40,14 @@ public class DB extends javax.swing.JFrame {
         btRol.setBackground(new java.awt.Color(153, 153, 255));
         btRol.setForeground(new java.awt.Color(255, 255, 255));
         btRol.setText(" Rol");
-        btRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btRolActionPerformed(evt);
-            }
-        });
 
         btUser.setBackground(new java.awt.Color(255, 153, 153));
         btUser.setForeground(new java.awt.Color(255, 255, 255));
         btUser.setText("Usuarios");
-        btUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUserActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Empleados");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,24 +81,6 @@ public class DB extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRolActionPerformed
-        viewRol vista = new viewRol();
-        vista.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btRolActionPerformed
-
-    private void btUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUserActionPerformed
-        viewUser vista = new viewUser();
-        vista.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btUserActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        viewEmpleado addEmpleado = new viewEmpleado();
-        addEmpleado.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

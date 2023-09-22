@@ -230,9 +230,5 @@ public class Pais {
         "Zambia",
         "Zimbabue"
     };
-     
-     public String[] getPais(){
-         return paises;
-     }
 
 }

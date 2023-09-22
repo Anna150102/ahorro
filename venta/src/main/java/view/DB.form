@@ -79,9 +79,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value=" Rol"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btRolActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btUser">
       <Properties>
@@ -93,9 +90,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Usuarios"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btUserActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -107,9 +101,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Empleados"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

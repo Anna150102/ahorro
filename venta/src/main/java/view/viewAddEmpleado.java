@@ -4,23 +4,17 @@
  */
 package view;
 
-import com.mycompany.venta.*;
-
 /**
  *
  * @author Anna
  */
 public class viewAddEmpleado extends javax.swing.JFrame {
 
-    ManejoEmpleado newEmpleado = new ManejoEmpleado();
-    ManejoPais pais = new ManejoPais();
-
     /**
      * Creates new form viewAddEmpleado
      */
     public viewAddEmpleado() {
         initComponents();
-        cbNacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(pais.Listar()));
     }
 
     /**
@@ -56,7 +50,6 @@ public class viewAddEmpleado extends javax.swing.JFrame {
         cbSexo = new javax.swing.JComboBox<>();
         cbEstado = new javax.swing.JComboBox<>();
         cbNacionalidad = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,26 +80,12 @@ public class viewAddEmpleado extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Union Libre" }));
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cbNacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Atras");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,8 +121,6 @@ public class viewAddEmpleado extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addGap(46, 46, 46))
             .addGroup(layout.createSequentialGroup()
@@ -201,49 +178,12 @@ public class viewAddEmpleado extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(tfMailPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton1)
                 .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nombre;
-        String identificacion;
-        String sexo;
-        String estadoCivil;
-        String profesion;
-        String nacionalidad;
-        String fechaNacimiento;
-        String fechaIngreso;
-        String fechaSalida;
-        String mailInterno;
-        String mailPersonal;
-
-        nombre = tfNombre.getText();
-        identificacion = tfIdentificacion.getText();
-        sexo = cbSexo.toString();
-        estadoCivil = cbEstado.toString();
-        profesion = tfProfesion.getText();
-        nacionalidad = cbNacionalidad.toString();
-        fechaNacimiento = tfNacimiento.getText();
-        fechaIngreso = tfIngreso.getText();
-        fechaSalida = tfSalida.getText();
-        mailInterno = tfMailInterno.getText();
-        mailPersonal = tfMailPersonal.getText();
-
-        newEmpleado.Insertar(nombre, identificacion, sexo, estadoCivil, profesion, nacionalidad, fechaNacimiento, fechaIngreso, fechaSalida, mailInterno, mailPersonal);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         viewEmpleado addEmpleado = new viewEmpleado();
-        addEmpleado.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,7 +225,6 @@ public class viewAddEmpleado extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbNacionalidad;
     private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
